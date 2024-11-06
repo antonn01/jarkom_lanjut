@@ -1,32 +1,43 @@
-# jan/02/1970 00:33:52 by RouterOS 6.49.8
-# software id = RWA7-BHWK
-#
-# model = RB941-2nD
-# serial number = HF609BYEWH7
+# Konfigurasi Router R3 CR (Router Core - Pusat)
+
+# Interface Wireless
 /interface wireless
 set [ find default-name=wlan1 ] ssid=MikroTik
+
+# Konfigurasi Wireless Security
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
+
+# Pool IP DHCP untuk jaringan 192.168.3.0/24
 /ip pool
-add name=dhcp_pool0 ranges=192.168.1.2-192.168.1.254
-add name=dhcp_pool1 ranges=192.168.2.2-192.168.2.254
-add name=dhcp_pool2 ranges=192.168.2.2-192.168.2.254
+add name=dhcp_pool2 ranges=192.168.3.2-192.168.3.254
+
+# DHCP Server untuk jaringan 192.168.3.0/24
 /ip dhcp-server
 add address-pool=dhcp_pool2 disabled=no interface=ether2 name=dhcp1
+
+# Alokasi IP untuk antarmuka
 /ip address
-add address=192.168.2.1/24 interface=ether2 network=192.168.2.0
-add address=10.10.10.2/24 interface=ether3 network=10.10.10.0
-add address=22.22.22.2/24 interface=ether4 network=22.22.22.0
+add address=192.168.3.1/24 interface=ether2 network=192.168.3.0
+add address=20.6.6.2/29 interface=ether1 network=20.6.6.0
+add address=33.33.33.2/29 interface=ether3 network=33.33.33.0
+
+# DHCP Server Network
 /ip dhcp-server network
-add address=192.168.2.0/24 gateway=192.168.2.1
+add address=192.168.3.0/24 gateway=192.168.3.1
+
+# Konfigurasi RIP
 /routing rip interface
+add interface=ether2
 add interface=ether3
-add interface=ether4
+
 /routing rip neighbor
-add address=22.22.22.1
-add address=10.10.10.1
+add address=33.33.33.1   # R2 KJ
+
 /routing rip network
-add network=10.10.10.0/24
-add network=22.22.22.0/24
+add network=192.168.3.0/24
+add network=33.33.33.0/29
+
+# Set Identity Router
 /system identity
-set name=UTS_JarLut
+set name=R3_CR_UTS_JarLut
