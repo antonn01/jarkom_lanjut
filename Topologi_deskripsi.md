@@ -50,10 +50,16 @@ Selanjutnya, pada R2 KJ, rute menuju jaringan 192.168.1.0/24 di Kampus KHI dan 1
 
 Di R3 CR yang berfungsi sebagai pusat, rute menuju jaringan 192.168.1.0/24 dan 192.168.2.0/24 ditambahkan agar dapat menghubungkan jaringan KHI dan KJ melalui R3 CR. Untuk rute ke 192.168.1.0/24 (Kampus KHI), next hop yang digunakan adalah 22.22.22.1 yang merupakan koneksi ke R1 KHI, sedangkan rute ke 192.168.2.0/24 (Kampus KJ) menggunakan next hop 10.10.10.1 yang terhubung langsung ke R2 KJ. <br>
 
-Konfigurasi static routing ini diakhiri dengan perintah write memory untuk menyimpan konfigurasi sehingga tidak hilang setelah router restart. Dengan konfigurasi ini, setiap router dapat mengarahkan lalu lintas antar jaringan kampus dengan jalur yang tepat tanpa perlu protokol dynamic routing.
+Konfigurasi static routing ini diakhiri dengan perintah write memory untuk menyimpan konfigurasi sehingga tidak hilang setelah router restart. Dengan konfigurasi ini, setiap router dapat mengarahkan lalu lintas antar jaringan kampus dengan jalur yang tepat tanpa perlu protokol dynamic routing. <br>
 
+## Langkah-langkah IPIP <br>
+Konfigurasi IPIP Tunnel ini memungkinkan setiap router di kampus terhubung satu sama lain melalui jaringan publik, sehingga komunikasi antar-jaringan di seluruh kampus dapat berjalan lancar. Pada R1 KHI, dua IPIP Tunnel dibuat untuk menghubungkannya dengan R2 KJ dan R3 CR. Tunnel pertama memiliki IP 22.22.22.1/29 dengan sumber 20.8.8.1 dan tujuan 20.8.8.2 untuk menghubungkan R1 KHI ke R2 KJ, sedangkan tunnel kedua menggunakan IP 33.33.33.1/29 dengan sumber 20.8.8.1 dan tujuan 20.6.6.2 untuk koneksi ke R3 CR. <br>
 
+Selanjutnya, pada R2 KJ, dua tunnel juga dikonfigurasi untuk menghubungkannya ke R1 KHI dan R3 CR. Tunnel pertama memiliki IP 22.22.22.2/29 dengan sumber 20.8.8.2 dan tujuan 20.8.8.1 untuk menghubungkan R2 KJ ke R1 KHI, sedangkan tunnel kedua menggunakan IP 33.33.33.2/29 dengan sumber 20.8.8.2 dan tujuan 20.6.6.2 untuk koneksi ke R3 CR. <br>
 
+Di R3 CR, yang berperan sebagai pusat, konfigurasi IPIP Tunnel memungkinkan koneksi ke R1 KHI dan R2 KJ. Tunnel pertama memiliki IP 33.33.33.2/29 dengan sumber 20.6.6.2 dan tujuan 20.8.8.1 untuk koneksi ke R1 KHI, sementara tunnel kedua menggunakan IP 33.33.33.1/29 dengan sumber 20.6.6.2 dan tujuan 20.8.8.2 untuk menghubungkannya dengan R2 KJ. <br>
+
+Setiap tunnel dikonfigurasi untuk koneksi point-to-point antar-router menggunakan alamat IP yang spesifik untuk tiap koneksi. Dengan pengaturan ini, jaringan di masing-masing router dapat terhubung satu sama lain melalui IP publik, memastikan komunikasi antar-kampus berjalan lancar dan efisien. <br>
 
 
 
