@@ -32,7 +32,10 @@ Komunikasi antara subnet 192.168.2.0/24 (KJ) dan jaringan pusat 192.168.3.0/24 (
 
 Data dari KJ melewati R2 KJ, melalui Eth 3 (IP 10.10.10.x/24) menuju Eth 3 di R3 CR, lalu diteruskan ke jaringan tujuan.
 
-### Konfigurasi RIP (Routing Information Protocol) pada setiap router memiliki tujuan untuk memastikan komunikasi yang efisien antar-jaringan di seluruh kampus. Pada R1 KHI, jaringan yang perlu ditambahkan adalah 192.168.1.0/24 sebagai jaringan lokal Kampus KHI, 22.22.22.0/24 untuk koneksi tunnel ke R3 CR, dan 33.33.33.0/24 untuk koneksi tunnel ke R2 KJ. Pengaturan ini memungkinkan R1 KHI untuk menghubungkan jaringan KHI dengan pusat (R3 CR) dan jaringan KJ (R2 KJ).
+
+### Langkah-langkah
+
+Konfigurasi RIP (Routing Information Protocol) pada setiap router memiliki tujuan untuk memastikan komunikasi yang efisien antar-jaringan di seluruh kampus. Pada R1 KHI, jaringan yang perlu ditambahkan adalah 192.168.1.0/24 sebagai jaringan lokal Kampus KHI, 22.22.22.0/24 untuk koneksi tunnel ke R3 CR, dan 33.33.33.0/24 untuk koneksi tunnel ke R2 KJ. Pengaturan ini memungkinkan R1 KHI untuk menghubungkan jaringan KHI dengan pusat (R3 CR) dan jaringan KJ (R2 KJ).
 
 Selanjutnya, pada R2 KJ, konfigurasi mencakup jaringan 192.168.2.0/24 sebagai jaringan lokal Kampus KJ, 10.10.10.0/24 sebagai koneksi tunnel ke R3 CR, dan 33.33.33.0/24 sebagai koneksi tunnel ke R1 KHI. Dengan pengaturan ini, R2 KJ dapat menghubungkan jaringan KJ ke pusat (R3 CR) serta langsung ke KHI.
 
