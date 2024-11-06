@@ -1,0 +1,16 @@
+# ESSAY
+
+#### 1.Jelaskan menurut anda apa itu Routing Static ?
+#### 2.Jelaskan menurut anda apa itu Routing Dynamic ?
+#### 3.Jelaskan menurut anda apa itu Firewall ?
+#### 4.Jelaskan menurut anda apa itu NAT ?
+
+#### Jawaban
+
+#### 1.Menurut saya, routing statik adalah jenis routing di mana rute menuju jaringan tertentu dikonfigurasi secara manual oleh administrator jaringan. Dalam pendekatan ini, administrator memasukkan rute ke tabel routing dengan menentukan alamat tujuan dan jalur yang harus ditempuh paket data. Routing statik memiliki karakteristik pengaturan manual dan tidak adaptif, artinya jika ada perubahan dalam topologi jaringan, seperti pemadaman jalur atau perubahan struktur jaringan, maka administrator harus memperbarui tabel routing secara manual. Hal ini membuat routing statik lebih cocok untuk jaringan kecil yang topologinya jarang berubah, karena pengaturannya sederhana dan memberikan kontrol lebih bagi administrator. Selain itu, routing statik lebih aman dan stabil karena tidak ada pembaruan otomatis yang bisa mengganggu alur data yang sudah diatur sebelumnya.
+
+#### 2.Menurut saya, routing dinamis adalah jenis routing di mana rute dalam jaringan ditentukan dan diperbarui secara otomatis oleh protokol routing yang berjalan di perangkat jaringan, seperti router. Dalam sistem ini, router dapat saling bertukar informasi mengenai topologi jaringan untuk menemukan dan memperbarui rute terbaik secara otomatis, terutama jika terjadi perubahan seperti pemadaman jalur atau penambahan perangkat baru. Hal ini membuat routing dinamis lebih adaptif dan efisien pada jaringan yang besar dan kompleks, karena mampu menyesuaikan dengan perubahan secara real-time tanpa campur tangan manual dari administrator. Meski demikian, routing dinamis memerlukan lebih banyak sumber daya karena router harus memproses informasi secara terus-menerus untuk menjaga tabel routing tetap optimal.
+
+#### 3.Menurut saya, firewall adalah sistem keamanan jaringan yang bertindak sebagai penghalang antara jaringan internal dan jaringan eksternal untuk melindungi data serta mencegah akses yang tidak sah. Firewall bekerja dengan memfilter lalu lintas jaringan berdasarkan aturan yang ditentukan, sehingga hanya lalu lintas yang dianggap aman yang diizinkan masuk atau keluar dari jaringan. Dengan demikian, firewall berfungsi sebagai lapisan perlindungan yang penting untuk menjaga jaringan dari ancaman berbahaya, seperti peretasan atau malware, serta memastikan bahwa hanya pengguna dan data yang berwenang yang dapat mengakses sumber daya dalam jaringan.
+
+#### 4.Menurut saya, NAT (Network Address Translation) adalah metode dalam jaringan yang digunakan untuk mengubah alamat IP pada paket data saat melintasi peralatan jaringan, seperti router, sehingga memungkinkan beberapa perangkat dalam jaringan lokal untuk menggunakan satu alamat IP publik. Dengan NAT, alamat IP lokal perangkat di jaringan internal bisa diterjemahkan menjadi alamat IP publik saat data dikirim ke luar jaringan. Ini tidak hanya membantu menghemat penggunaan alamat IP publik tetapi juga meningkatkan keamanan, karena perangkat dalam jaringan lokal tidak terlihat langsung di internet, membuatnya lebih sulit diakses oleh pihak luar yang tidak berwenang.
