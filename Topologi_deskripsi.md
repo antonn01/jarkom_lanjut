@@ -24,13 +24,13 @@ Eth 2 (192.168.2.1/24): Menghubungkan jaringan 192.168.2.0/24 di Kampus KJ.
 ### Alur Komunikasi Antar Subnet
 Komunikasi antara subnet 192.168.1.0/24 (KHI) dan subnet 192.168.2.0/24 (KJ):
 
-Paket data dari KHI melewati R1 KHI, melalui Eth 4 (IP 33.33.33.x/24) menuju Eth 4 di R2 KJ, kemudian ke 192.168.2.0/24 melalui Eth 2 di R2 KJ.
+Paket data dari KHI melewati R1 KHI, melalui Eth 4 (IP 33.33.33.0/24) menuju Eth 4 di R2 KJ, kemudian ke 192.168.2.0/24 melalui Eth 2 di R2 KJ.
 Komunikasi antara subnet 192.168.1.0/24 (KHI) dan jaringan pusat 192.168.3.0/24 (CR):
 
-Data dari KHI melewati R1 KHI, melalui Eth 3 (IP 22.22.22.x/24) menuju Eth 4 di R3 CR, dan diteruskan ke tujuan.
+Data dari KHI melewati R1 KHI, melalui Eth 3 (IP 22.22.22.0/24) menuju Eth 4 di R3 CR, dan diteruskan ke tujuan.
 Komunikasi antara subnet 192.168.2.0/24 (KJ) dan jaringan pusat 192.168.3.0/24 (CR):
 
-Data dari KJ melewati R2 KJ, melalui Eth 3 (IP 10.10.10.x/24) menuju Eth 3 di R3 CR, lalu diteruskan ke jaringan tujuan.
+Data dari KJ melewati R2 KJ, melalui Eth 3 (IP 10.10.10.0/24) menuju Eth 3 di R3 CR, lalu diteruskan ke jaringan tujuan.
 
 
 ### Langkah-langkah
